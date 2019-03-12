@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_number: 1
+  model_number: MyText
+  start_date: MyText
+  assigned_employee: MyText
+  completion_date: MyText
+  team_number: MyText
+
+two:
+  job_number: 1
+  model_number: MyText
+  start_date: MyText
+  assigned_employee: MyText
+  completion_date: MyText
+  team_number: MyText

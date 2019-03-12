@@ -1,0 +1,37 @@
+<%= form_with model: @job, local: true do |form| %>
+      <% if @job.errors.any? %>
+          <h2>
+              <%= pluralize(@job.errors.count, "error") %> prohibited this from being saved:
+          </h2>
+          <ul>
+              <% job.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+          </ul>
+      <% end %>
+      <p>
+          <%= form.label :job_number %>
+          <%= form.text_field :job_number %>
+      </p>
+      <p>
+          <%= form.label :model_number %>
+          <%= form.text_field :model_number %>
+      </p>
+      <p>
+          <%= form.label :start_date %>
+          <%= form.text_field :start_date %>
+      </p>
+      <p>
+          <%= form.label :completion_date %>
+          <%= form.text_field :completion_date %>
+      </p>
+      <p>
+          <%= form.label :assigned_employee %>
+          <%= form.text_field :assigned_employee %>
+      </p>
+      <p>
+          <%= form.label :team_number %>
+          <%= form.text_field :team_number %>
+      </p>
+      <%= form.submit %>
+  <% end %>

@@ -1,0 +1,26 @@
+<h1>Job List</h1>
+<ul>
+  <% @jobs.each do |job| %>
+    <br>
+    <strong><%= link_to(job.job_number, job_path(job)) %></strong>
+    <li>
+       Job Number: <%= job.job_number%>
+       <br>
+       Model Number: <%= job.model_number%>
+       <br>
+       Start Date: <%= job.start_date%>
+       <br>
+       Assigned Employee: <%= job.assigned_employee%>
+       <br>
+       Completion Date: <%= job.completion_date%>
+       <br>
+       Assigned Team: <%= job.team_number%>
+       <br>
+    </li>
+  <% end %>
+</ul>
+<br>
+<%= link_to 'Back to Overview', welcome_index_path %>
+<br>
+<br>
+<%= link_to 'Create A New Job', new_job_path %>

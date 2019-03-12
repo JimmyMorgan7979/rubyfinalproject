@@ -1,0 +1,23 @@
+<h1 class = "text-center">Job Overview</h1>
+<hr>
+<h2 class = "text-center">Total Numbers of active Jobs:</h2>
+<hr>
+
+<body>
+  <div>
+      <h3 class = "text-center">placeholder for job total </h3>
+  </div>
+  <br>
+  <br>
+
+  <div class="d-flex justify-content-center border border-primary">
+     <div class="btn btn-info mx-4">
+       <%= link_to 'View Job List', jobs_path(@job), :class => "btn" %>
+     </div>
+
+      <div class="btn btn-info mx-4">
+        <%= link_to 'Add a Job', new_job_path(@job), :class => "btn" %>
+     </div>
+  </div>
+
+</body>

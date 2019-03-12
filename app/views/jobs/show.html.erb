@@ -1,0 +1,43 @@
+
+<div class="btn btn-info btn-sm btn-block">
+  <%= link_to 'Return to List ', jobs_path(@job), :class => "btn" %>
+</div>
+<br>
+
+<h1 class = "text-center">Job Number: <%= @job.job_number %></h1>
+<br>
+Job Details:
+<hr>
+<ul>
+  <br>
+  <li>Model Number: <%= @job.model_number%></li>
+  <li>Start Date: <%= @job.start_date%></li>
+  <li>Assigned Employee: <%= @job.assigned_employee%></li>
+  <li>Completion Date: <%= @job.completion_date%></li>
+  <li>Assigned Team: <%= @job.team_number%></li>
+</ul>
+<br>
+<hr>
+<br>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col">
+     <div class="btn btn-danger">
+       <%= link_to('Delete Job', job_path(@job),:class => "btn",
+           method: :delete,
+           data: { confirm: "Are you sure?" })
+
+       %>
+     </div>
+    </div>
+
+    <div class="col">
+      <div class="btn btn-primary">
+        <%= link_to 'Edit This Job', edit_job_path(@job), :class => "btn" %>
+     </div>
+    </div>
+
+  </div>
+</div>

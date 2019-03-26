@@ -1,1 +1,9 @@
 @import 'bootstrap';
+body {
+  background: url(louisville_picture50.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+//this code allows the application to use bootstrap for styling

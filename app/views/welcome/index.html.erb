@@ -1,23 +1,20 @@
-<h1 class = "text-center">Job Overview</h1>
-<hr>
-<h2 class = "text-center">Total Numbers of active Jobs:</h2>
-<hr>
+<header>
+<h1 class = "text-center mt-4 mb-5 p-3 mb-2 bg-danger text-white">Louisville Service center</h1>
 
+<%# This displayed count will change with the total number of active jobs in the system %>
+<h2 class = "text-center mt-4 mb-2 ">Total Numbers of active repair Jobs:</h2>
+</header>
 <body>
+  <%# div container for job total count %>
   <div>
-      <h3 class = "text-center">placeholder for job total </h3>
+      <h3 class = "mt-5 mb-3 text-center display-1 text-danger"><%=Job.count%></h3>
   </div>
   <br>
   <br>
-
-  <div class="d-flex justify-content-center border border-primary">
-     <div class="btn btn-info mx-4">
-       <%= link_to 'View Job List', jobs_path(@job), :class => "btn" %>
-     </div>
-
-      <div class="btn btn-info mx-4">
-        <%= link_to 'Add a Job', new_job_path(@job), :class => "btn" %>
-     </div>
+<%# div element for containing home screen buttons %>
+  <div class="d-flex justify-content-center mt-3 mb-3 ">
+       <%= link_to 'View Current Job List', jobs_path(@job), :class => "btn btn-primary mx-4 p-3" %>
+       <%= link_to 'Create a New Job', new_job_path(@job), :class => "btn btn-primary mx-4 p-3" %>
   </div>
 
 </body>

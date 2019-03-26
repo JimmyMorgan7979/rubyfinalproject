@@ -1,13 +1,10 @@
 
-<div class="btn btn-info btn-sm btn-block">
-  <%= link_to 'Return to List ', jobs_path(@job), :class => "btn" %>
-</div>
-<br>
-
+<%# This page shows the job you selected more details on %>
 <h1 class = "text-center">Job Number: <%= @job.job_number %></h1>
 <br>
-Job Details:
+<p>Job Details:</p>
 <hr>
+<%# displays the job details in a list format %>
 <ul>
   <br>
   <li>Model Number: <%= @job.model_number%></li>
@@ -19,25 +16,17 @@ Job Details:
 <br>
 <hr>
 <br>
-
-<div class="container">
-  <div class="row">
-
-    <div class="col">
-     <div class="btn btn-danger">
-       <%= link_to('Delete Job', job_path(@job),:class => "btn",
-           method: :delete,
-           data: { confirm: "Are you sure?" })
-
-       %>
-     </div>
-    </div>
-
-    <div class="col">
-      <div class="btn btn-primary">
-        <%= link_to 'Edit This Job', edit_job_path(@job), :class => "btn" %>
-     </div>
-    </div>
-
-  </div>
+<br>
+<%# navigation div container %>
+<div class="d-flex justify-content-center ">
+<%# delete button, allows the current displayed job to be deleted, asks for comformation %>
+     <%= link_to('Delete Job', job_path(@job),:class => "btn  btn-danger mx-4",
+         method: :delete,
+         data: { confirm: "Are you sure?" })
+     %>
+     <%# edit job button %>
+      <%= link_to 'Edit This Job', edit_job_path(@job), :class => "btn btn-primary mx-4" %>
 </div>
+<%# button that redirects you back to the job list page %>
+<br>
+  <%= link_to 'Return to List ', jobs_path(@job), :class => "btn btn-info btn-sm btn-block" %>

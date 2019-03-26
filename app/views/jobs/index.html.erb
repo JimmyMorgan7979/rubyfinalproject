@@ -1,10 +1,9 @@
-<h1>Job List</h1>
-<ul>
+<%# this page will show all active jobs, and their details %>
+<h1 class = "text-center mt-3 mb-5 p-3 mb-2 bg-danger text-white">Job List</h1>
+<%# this code loops through each job and displayes each attrubute %>
   <% @jobs.each do |job| %>
     <br>
-    <strong><%= link_to(job.job_number, job_path(job)) %></strong>
-    <li>
-       Job Number: <%= job.job_number%>
+       <strong>Job Number: </strong> <%= link_to(job.job_number, job_path(job)) %>
        <br>
        Model Number: <%= job.model_number%>
        <br>
@@ -16,11 +15,16 @@
        <br>
        Assigned Team: <%= job.team_number%>
        <br>
-    </li>
   <% end %>
-</ul>
+
 <br>
-<%= link_to 'Back to Overview', welcome_index_path %>
-<br>
-<br>
-<%= link_to 'Create A New Job', new_job_path %>
+<%# div container for navigation buttons %>
+  <div class="d-flex justify-content-center pb-3 ">
+     <div class="btn btn-primary mx-4 p-3">
+       <%= link_to 'Back to Overview', welcome_index_path, :class => "btn" %>
+     </div>
+
+      <div class="btn btn-primary mx-4 p-3 ">
+        <%= link_to 'Create A New Job ',new_job_path , :class => "btn" %>
+     </div>
+  </div>

@@ -1,4 +1,8 @@
+
+<%# This is the partial form, that is used in the edit, and new pages %>
+<%# This form allows you to input or edit all values into the job object %>
 <%= form_with model: @job, local: true do |form| %>
+    <%# error handling on the object, keeping the form from crashing the app %>
       <% if @job.errors.any? %>
           <h2>
               <%= pluralize(@job.errors.count, "error") %> prohibited this from being saved:
@@ -9,6 +13,7 @@
               <% end %>
           </ul>
       <% end %>
+
       <p>
           <%= form.label :job_number %>
           <%= form.text_field :job_number %>
@@ -18,8 +23,10 @@
           <%= form.text_field :model_number %>
       </p>
       <p>
+        <%# The date will autopopulate with the current date for ease of use, it can be overwritten %>
           <%= form.label :start_date %>
-          <%= form.text_field :start_date %>
+          <%= form.text_field :start_date, placeholder: "Enter:   mm/dd/yyyy" %>
+
       </p>
       <p>
           <%= form.label :completion_date %>
@@ -30,8 +37,12 @@
           <%= form.text_field :assigned_employee %>
       </p>
       <p>
+
           <%= form.label :team_number %>
-          <%= form.text_field :team_number %>
+          <%= form.text_field :team_number , placeholder: "Enter:   1-6" %>
       </p>
-      <%= form.submit %>
+      <%= form.submit class: 'btn btn-success' %>
+      <br>
+        <%= link_to 'Return to List ', jobs_path(@job), :class => "btn btn-info btn-sm btn-block mt-4" %>
+
   <% end %>
